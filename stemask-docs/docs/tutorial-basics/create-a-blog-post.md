@@ -2,13 +2,13 @@
 sidebar_position: 3
 ---
 
-# ブログ投稿を作成する
+# Create a Blog Post
 
-Docusaurusは、ブログ投稿ごとにページを作成しますが、ブログインデックスページ、タグシステム、RSSフィードなども作成します。
+Docusaurus creates a **page for each blog post**, but also a **blog index page**, a **tag system**, an **RSS** feed...
 
-## 最初の投稿を作成する
+## Create your first Post
 
-次のパスにファイルを作成`blog/2021-02-28-greetings.md`:
+Create a file at `blog/2021-02-28-greetings.md`:
 
 ```md title="blog/2021-02-28-greetings.md"
 ---
@@ -31,4 +31,4 @@ Congratulations, you have made your first post!
 Feel free to play around and edit this post as much as you like.
 ```
 
-新しいブログ投稿が次の場所で公開されています。[http://localhost:3000/blog/greetings](http://localhost:3000/blog/greetings).
+A new blog post is now available at [http://localhost:3000/blog/greetings](http://localhost:3000/blog/greetings).

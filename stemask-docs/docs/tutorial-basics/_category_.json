@@ -1,8 +1,8 @@
 {
-  "label": "公式チュートリアル",
+  "label": "Tutorial - Basics",
   "position": 2,
   "link": {
     "type": "generated-index",
-    "description": "5分でわかるドキュザウルス講座"
+    "description": "5 minutes to learn the most important Docusaurus concepts."
   }
 }

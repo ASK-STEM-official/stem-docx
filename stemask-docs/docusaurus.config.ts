@@ -1,22 +1,24 @@
-import { themes as prismThemes } from 'prism-react-renderer';
-import type { Config } from '@docusaurus/types';
+import {themes as prismThemes} from 'prism-react-renderer';
+import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
+// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
+
 const config: Config = {
-  title: 'STEMASK Docs',
-  tagline: 'Docuements for STEM members',
-  favicon: 'img/stem.ico',
+  title: 'My Site',
+  tagline: 'Dinosaurs are cool',
+  favicon: 'img/favicon.ico',
 
-  // サイトのURL
-  url: 'https://ask-stem-official.github.io',
+  // Set the production url of your site here
+  url: 'https://your-docusaurus-site.example.com',
   // Set the /<baseUrl>/ pathname under which your site is served
-  // GitHub pages環境の場合'/<リポジトリ名>/' を入力
-  baseUrl: '/stemask-docs/',
+  // For GitHub pages deployment, it is often '/<projectName>/'
+  baseUrl: '/',
 
-  // GitHub Pagesのデプロイ構成
-  // GitHub Pagesを使用していない場合は不要
-  organizationName: 'ASK-STEM-official', // ユーザーネーム
-  projectName: 'stemask-docs', // リポジトリ名
+  // GitHub pages deployment config.
+  // If you aren't using GitHub pages, you don't need these.
+  organizationName: 'facebook', // Usually your GitHub org/user name.
+  projectName: 'docusaurus', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -25,11 +27,9 @@ const config: Config = {
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'ja',
-    locales: ['ja'],
+    defaultLocale: 'en',
+    locales: ['en'],
   },
-
-  noIndex: true,
 
   presets: [
     [
@@ -39,164 +39,50 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/ASK-STEM-official/stemask-docs/tree/main/',
+          editUrl:
+            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         blog: {
           showReadingTime: true,
+          feedOptions: {
+            type: ['rss', 'atom'],
+            xslt: true,
+          },
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          // Useful options to enforce blogging best practices
+          onInlineTags: 'warn',
+          onInlineAuthors: 'warn',
+          onUntruncatedBlogPosts: 'warn',
         },
-        theme: { // https://docusaurus.io/docs/styling-layout#styling-your-site-with-infima
+        theme: {
           customCss: './src/css/custom.css',
         },
       } satisfies Preset.Options,
     ],
   ],
 
-  plugins: [
-    [//ここのかっこで括られている部分をコピペして設定
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'unity-docs',
-        path: 'unity-docs',
-        routeBasePath: 'unity-docs',
-        sidebarPath: './sidebars.ts',//サイドバーパス
-        editUrl: 'https://github.com/ASK-STEM-official/stemask-docs/tree/main/',//編集用メニューの遷移先URL
-        // ... other options
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'IT-docs',
-        path: 'IT-docs',
-        routeBasePath: 'IT-docs',
-        sidebarPath: './sidebars.ts',
-        editUrl: 'https://github.com/ASK-STEM-official/stemask-docs/tree/main/',//編集用メニューの遷移先URL
-        // ... other options
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'web-docs',
-        path: 'web-docs',
-        routeBasePath: 'web-docs',
-        sidebarPath: './sidebars.ts',
-        editUrl: 'https://github.com/ASK-STEM-official/stemask-docs/tree/main/',//編集用メニューの遷移先URL
-        // ... other options
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'beginners',
-        path: 'beginners',
-        routeBasePath: 'beginners',
-        sidebarPath: './sidebars.ts',
-        editUrl: 'https://github.com/ASK-STEM-official/stemask-docs/tree/main/',//編集用メニューの遷移先URL
-        // ... other options
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'git',
-        path: 'git',
-        routeBasePath: 'git',
-        sidebarPath: './sidebars.ts',
-        editUrl: 'https://github.com/ASK-STEM-official/stemask-docs/tree/main/',//編集用メニューの遷移先URL
-        // ... other options
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'ET-docs',
-        path: 'ET-docs',
-        routeBasePath: 'ET-docs',
-        sidebarPath: './sidebars.ts',
-        editUrl: 'https://github.com/ASK-STEM-official/stemask-docs/tree/main/',//編集用メニューの遷移先URL
-        // ... other options
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-docs',
-      {
-        id: 'LEGO-docs',
-        path: 'LEGO-docs',
-        routeBasePath: 'LEGO-docs',
-        sidebarPath: './sidebars.ts',
-        editUrl: 'https://github.com/ASK-STEM-official/stemask-docs/tree/main/',//編集用メニューの遷移先URL
-        // ... other options
-      },
-    ],
-  ],
-
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/stemask-docs-social-card.jpg',
-    colorMode: {
-      defaultMode: 'dark'//デフォルトのカラーテーマ
-    },
+    image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'STEMASK Docs',
+      title: 'My Site',
       logo: {
-        alt: 'Logo',
-        src: 'img/stem.svg',
+        alt: 'My Site Logo',
+        src: 'img/logo.svg',
       },
       items: [
         {
-          to: "/docs/intro",
+          type: 'docSidebar',
+          sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'How to Edit',
+          label: 'Tutorial',
         },
+        {to: '/blog', label: 'Blog', position: 'left'},
         {
-          to: "/beginners/intro",
-          position: 'left',
-          label: 'Beginners',
-        },
-        {
-          to: "/unity-docs/intro",
-          position: 'left',
-          label: 'Unity',
-        },
-        {
-          to: "/IT-docs/intro",
-          position: 'left',
-          label: 'IT',
-        },
-        {
-          to: "/web-docs/intro",
-          position: 'left',
-          label: 'Web',
-        },
-        {
-          to: "/ET-docs/intro",
-          position: 'left',
-          label: 'ETロボコン',
-        },
-        {
-          to: "/LEGO-docs/intro",
-          position: 'left',
-          label: 'LEGOロボット',
-        },
-        {
-          to: "/git/intro",
-          position: 'left',
-          label: 'Git使い方',
-        },
-        {
-          to: "/blog",
-          position: 'left',
-          label: 'blog',
-        },
-
-        // {to: '/blog', label: '作品集', position: 'left'},
-        {
-          href: 'https://github.com/ASK-STEM-official/stemask-docs',
+          href: 'https://github.com/facebook/docusaurus',
           label: 'GitHub',
           position: 'right',
         },
@@ -205,101 +91,51 @@ const config: Config = {
     footer: {
       style: 'dark',
       links: [
-        {//この中かっこをコピペでカテゴリトップを作成
-          title: 'How to Edit',
+        {
+          title: 'Docs',
           items: [
             {
-              label: '公式チュートリアル',
-              to: '/docs/intro',//内部リンクである場合はto:を使う
-            },
-          ]
-        },
-        {
-          title: 'Unity Docs',
-          items: [//カテゴリ内のコンテンツの表示はこの部分を参考
-            {
-              label: 'はじめに',
-              to: '/unity-docs/intro',//内部リンクである場合はto:を使う
-            },
-            {
-              label: '環境構築',
-              to: '/unity-docs/category/環境構築',
-            },
-            {
-              label: 'よくあるつまずき',
-              to: '/unity-docs/category/よくあるつまずき',
-            },
-            {
-              label: 'デモプロジェクトの作成',
-              to: '/unity-docs/category/デモプロジェクトの作成',
+              label: 'Tutorial',
+              to: '/docs/intro',
             },
           ],
         },
         {
-          title: 'IT Docs',
-          items: [//カテゴリ内のコンテンツの表示はこの部分を参考
+          title: 'Community',
+          items: [
             {
-              label: 'はじめに',
-              to: '/IT-docs/intro',//内部リンクである場合はto:を使う
+              label: 'Stack Overflow',
+              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+            },
+            {
+              label: 'Discord',
+              href: 'https://discordapp.com/invite/docusaurus',
+            },
+            {
+              label: 'X',
+              href: 'https://x.com/docusaurus',
             },
           ],
         },
         {
-          title: 'Web docs',
+          title: 'More',
           items: [
             {
-              label: 'はじめに',
-              to: '/web-docs/intro',
+              label: 'Blog',
+              to: '/blog',
             },
-          ]
-        },
-        {
-          title: 'ETロボコン docs',
-          items: [
-            {
-              label: 'はじめに',
-              to: '/ET-docs/intro',
-            },
-          ]
-        },
-        {
-          title: 'LEGOロボット docs',
-          items: [
-            {
-              label: 'はじめに',
-              to: '/LEGO-docs/intro',
-            },
-          ]
-        },
-        {
-          title: 'Gitの使い方',
-          items: [
-            {
-              label: 'はじめに',
-              to: '/git/intro',
-            },
-          ]
-        },
-        {
-          title: '関連リンク',
-          items: [
             {
               label: 'GitHub',
-              href: 'https://github.com/ASK-STEM-official/stemask-docs',//外部リンクはhref要素で宣言
-            },
-            {
-              label: 'ブログ',
-              to: '/blog',
+              href: 'https://github.com/facebook/docusaurus',
             },
           ],
         },
       ],
-      copyright: `© ${new Date().getFullYear()} STEMASK Research Club.`,
+      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
-      additionalLanguages: ['csharp', 'java'],
     },
   } satisfies Preset.ThemeConfig,
 };

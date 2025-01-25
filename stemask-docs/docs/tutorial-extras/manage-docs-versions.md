@@ -2,29 +2,30 @@
 sidebar_position: 1
 ---
 
-# ドキュメントのバージョンを管理する
+# Manage Docs Versions
 
-Docusaurusはキュメントの複数のバージョンを管理できます。
+Docusaurus can manage multiple versions of your docs.
 
-## ドキュメントバージョンを作成する
+## Create a docs version
 
-プロジェクトのバージョン1.0をリリースします。
+Release a version 1.0 of your project:
 
 ```bash
 npm run docusaurus docs:version 1.0
 ```
 
-「docs」フォルダーが「versioned_docs/version-1.0」にコピーされ、「versions.json」が作成されます。
+The `docs` folder is copied into `versioned_docs/version-1.0` and `versions.json` is created.
 
-ドキュメントには2つのバージョンがあります。
+Your docs now have 2 versions:
 
-- 今後のリリース予定のドキュメントは(http://localhost:3000/docs/)のcurrentを参照してください <!-- 翻訳案募集 -->
+- `1.0` at `http://localhost:3000/docs/` for the version 1.0 docs
+- `current` at `http://localhost:3000/docs/next/` for the **upcoming, unreleased docs**
 
-## バージョンドロップダウンを追加
+## Add a Version Dropdown
 
-バージョン間をシームレスに移動するには、バージョンのドロップダウンを追加します。
+To navigate seamlessly across versions, add a version dropdown.
 
-`docusaurus.config.js` ファイルを修正する。
+Modify the `docusaurus.config.js` file:
 
 ```js title="docusaurus.config.js"
 export default {
@@ -42,13 +43,13 @@ export default {
 };
 ```
 
-ドキュメント バージョンのドロップダウンがナビゲーションバーに表示されます。
+The docs version dropdown appears in your navbar:
 
 ![Docs Version Dropdown](./img/docsVersionDropdown.png)
 
-## 既存のバージョンを更新する
+## Update an existing version
 
-バージョン管理されたドキュメントは、それぞれのフォルダーで編集できます。
+It is possible to edit versioned docs in their respective folder:
 
 - `versioned_docs/version-1.0/hello.md` updates `http://localhost:3000/docs/hello`
 - `docs/hello.md` updates `http://localhost:3000/docs/next/hello`

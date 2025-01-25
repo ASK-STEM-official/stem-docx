@@ -2,20 +2,46 @@
 sidebar_position: 1
 ---
 
-# ようこそSTEM-ASK-Docsへ！
-STEM-ASK-DocsはSTEM部員によるSTEM部員のためのSTEM部員だけのドキュメントです。
-このドキュメントはSTEM部員が育てていくものです。積極的に利用し、編集・改善を行っていきましょう！
+# Tutorial Intro
 
-## STEM-ASK-Docsとは?
-STEM-ASK-DocsはSTEM研究部に所属する、または所属していた人たちによって編集されているSTEM部のノウハウの結晶です。後輩に伝えたい技術や最初の一歩を踏み出すための環境構築の方法などを書き記したものです。
-サイトページのテキストはすべてSTEM部員によって書かれています。
-あなたも編集者の一人になりませんか?
+Let's discover **Docusaurus in less than 5 minutes**.
 
-## サイトマップ
-<!-- 実装予定 -->
+## Getting Started
 
-## 編集したいあなたへ
-<!--ここにedit-docsのリンクを載せるなりして誘導する(edit-docs未編集)-->
+Get started by **creating a new site**.
 
-## スペシャルサンクス
-<!-- ここに編集者の名前を載せたらいい感じに貢献出来てる感を出せるかなと思ってる -->
+Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+
+### What you'll need
+
+- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
+  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
+
+## Generate a new site
+
+Generate a new Docusaurus site using the **classic template**.
+
+The classic template will automatically be added to your project after you run the command:
+
+```bash
+npm init docusaurus@latest my-website classic
+```
+
+You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+
+The command also installs all necessary dependencies you need to run Docusaurus.
+
+## Start your site
+
+Run the development server:
+
+```bash
+cd my-website
+npm run start
+```
+
+The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
+
+The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
+
+Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.

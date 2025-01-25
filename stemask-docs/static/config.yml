@@ -3,8 +3,8 @@ backend:
   repo: ASK-STEM-official/stem-docx
   branch: main
 
-media_folder: "static/img" # アップロードした画像が保存されるフォルダ
-public_folder: "/img" # 公開URLのルート
+media_folder: "static/img"
+public_folder: "/img"
 
 collections:
   - name: blog

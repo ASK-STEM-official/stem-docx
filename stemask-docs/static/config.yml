@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: ASK-STEM-official/stem-docx
-  branch: main
+  branch: kyouryuu
 
 media_folder: "static/img"
 public_folder: "/img"

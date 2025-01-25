@@ -3,7 +3,7 @@ backend:
   repo: ASK-STEM-official/stem-docx
   branch: kyouryuu
 
-media_folder: "static/img"
+media_folder: "stemask-docs/static/img"
 public_folder: "/img"
 
 collections:
